@@ -3,10 +3,10 @@ let target = 3;
 
 for (let i = 0; i < arr.length; i ++){
     if (arr[i] == target){
-        arr.splice(i, 1)
+        arr.splice(i, 1);
     }
 }
 
 for (let i = 0; i < arr.length; i ++){
-    console.log(arr[i])
+    console.log(arr[i]);
 }
