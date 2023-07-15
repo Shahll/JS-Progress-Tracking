@@ -1,4 +1,4 @@
-function is_prime(number){
+function isPrime(number){
     if (number < 2){
         return false;
     }
@@ -13,7 +13,7 @@ function is_prime(number){
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 for (j = 0; j < arr.length; j++){
-    if (is_prime(arr[j])){
+    if (isPrime(arr[j])){
         console.log(arr[j]);
     }
 }
