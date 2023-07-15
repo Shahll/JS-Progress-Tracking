@@ -11,5 +11,5 @@ function insertionSort(arr){
     }
     return arr
 }
-const arr  = [4,3,2,10,1,12,8]
+var arr  = [4,3,2,10,1,12,8]
 console.log(insertionSort(arr))
