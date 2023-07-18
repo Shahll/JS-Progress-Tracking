@@ -1,4 +1,4 @@
-function quickSort(arr, low=0, high=NaN){
+/*function quickSort(arr, low=0, high=NaN){
     if (isNaN(high)){
         high = arr.length - 1;
     }
@@ -18,18 +18,36 @@ function partition(arr, low, high){
         if (arr[i] < pivot){
             let temp = arr[i];
             arr[i] = arr[wall];
-            arr[wall] = temp;
-            wall++;
+            arr[wall++] = temp;
         }
     }
-    var temp = arr[high];
+    let temp = arr[high];
     arr[high] = arr[wall];
     arr[wall] = temp;
 
     return wall;
 }
 
+*/
 
+function quickSort(items){
+    const length = items.length;
 
-const arr = [12, 1, 77, 34, 8, 56, 6, 17, 28, 39];
-console.log(quickSort(arr));
+    if (length <= 1){
+        return items;
+    }
+    const PIVOT = items[0];
+    const GREATER = [];
+    const LESSER = [];
+
+    for (let i = 1; i < length; i++){
+        if (items[i] > PIVOT){
+            GREATER.push(items[i])
+        } else {
+            LESSER.push(items[i])
+        }
+    }
+
+    const sorted = [...quickSort(LESSER), PIVOT, ...quickSort(GREATER)];
+    return sorted;
+}
