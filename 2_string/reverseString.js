@@ -13,4 +13,4 @@ function reverse(string){
 }
 
 let string = "uoy evol I";
-console.log(reverse(string))
+console.log(reverse(string));
