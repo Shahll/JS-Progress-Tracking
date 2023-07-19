@@ -1,16 +1,15 @@
-function isAnagram(string1, string2) {
-    let letters = string1.split();
+function areAnagrams(str1, str2) {
+    str1 = str1.split(" ").join("").toLowerCase();
+    str2 = str2.split(" ").join("").toLowerCase();
+  
+    const sortedStr1 = str1.split("").sort().join("");
+    const sortedStr2 = str2.split("").sort().join("");
+  
+    return sortedStr1 === sortedStr2;
+  }
 
-    for (let i = 0; i < string2.length; i++) {
-        if (letters.includes(string2[i])) {
-            letters.splice(i, 1);
-        } else {
-            return false;
-        }
-    }
-    return (letters.length == 0);
-}
-
-let string1 = "bebra";
-let string2 = "barbe";
-console.log(isAnagram(string1, string2));
+  
+  const string1 = "listen";
+  const string2 = "silent";
+  console.log(areAnagrams(string1, string2)); 
+  
