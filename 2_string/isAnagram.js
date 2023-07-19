@@ -6,10 +6,9 @@ function areAnagrams(str1, str2) {
     const sortedStr2 = str2.split("").sort().join("");
   
     return sortedStr1 === sortedStr2;
-  }
+}
 
   
-  const string1 = "listen";
-  const string2 = "silent";
-  console.log(areAnagrams(string1, string2)); 
-  
+const string1 = "listen";
+const string2 = "silent";
+console.log(areAnagrams(string1, string2)); 
