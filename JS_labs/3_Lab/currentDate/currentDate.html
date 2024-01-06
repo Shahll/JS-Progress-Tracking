@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .top {
+      background-color: grey;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .bottom {
+      background-color: rgb(167, 221, 221);
+      height: 120px;
+    }
+  </style>
+  <script>
+    function showDate() {
+      let currentDate = new Date()
+      const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      let text = `Date: ${currentDate.getDate()} ${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}<br>
+        Day: ${dayNames[currentDate.getDay()]}<br>
+        Time: ${currentDate.toLocaleTimeString()}`
+
+
+      let textOfDate = document.getElementsByClassName("textOfDate")[0];
+      textOfDate.innerHTML = text;
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr class="top">
+      <td>Task</td>
+      <td></td>
+      <td>Result</td>
+    </tr>
+    <tr class="bottom">
+      <td><b>Task:</b> Display the current date and time</td>
+      <td><button onclick="showDate()">Perform</button></td>
+      <td>
+        <p class="textOfDate"></p>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

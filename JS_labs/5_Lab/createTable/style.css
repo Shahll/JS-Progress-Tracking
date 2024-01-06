@@ -1,0 +1,8 @@
+table {
+  background-color: gray;
+  border: 1px;
+  border-color: black;
+  border-collapse: collapse;
+  width: 20%;
+  margin-bottom: 15px;
+}

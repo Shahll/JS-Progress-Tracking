@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+}
+
+.square {
+  height: 50px;
+  width: 50px;
+  border: 2px solid;
+  border-color: white;
+
+}
+
+.color-palette {
+  width: 200px; 
+  height: 70px;
+  position: absolute;
+  background: gray;
+  margin-left: 200px;
+}
+
+#darkred {
+  background-color: darkred;
+}
+#red {
+  background-color: red;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#lightgreen {
+  background-color: lightgreen;
+}
+#green {
+  background-color: green;
+}
+
+#lightblue {
+  background-color: lightblue;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#darkblue {
+  background-color: darkblue;
+}

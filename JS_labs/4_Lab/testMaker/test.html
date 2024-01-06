@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Перевірка таблиці множення</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #question {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    #score {
+      font-size: 18px;
+    }
+    #result {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    #options {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    label {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Таблиця множення</h1>
+  <div id="score">Загальний рахунок: 0 / 0</div>
+  <div id="question">Чому дорівнює добуток?</div>
+  <div id="options">
+    <label>
+      <input type="radio" name="answer" value="false"> 24
+    </label>
+    <label>
+      <input type="radio" name="answer" value="true"> 42
+    </label>
+    <label>
+      <input type="radio" name="answer" value="false"> 36
+    </label>
+  </div>
+  <button onclick="checkAnswer()">Перевірити</button>
+  <div id="result"></div>
+
+  <script>
+    let score = 0;
+    let totalQuestions = 1;
+    let currentQuestion = generateQuestion();
+
+    function generateQuestion() {
+      const num1 = getRandomNumber(2, 9);
+      const num2 = getRandomNumber(2, 9);
+      const correctAnswer = num1 * num2;
+
+      document.getElementById("question").textContent = `Чому дорівнює добуток ${num1} * ${num2}?`;
+
+      const options = document.querySelectorAll("input[type=radio]");
+      options[0].value = "false";
+      options[1].value = "false";
+      options[2].value = "false";
+      options[Math.floor(Math.random() * 3)].value = "true";
+
+      for (let i = 0; i < 3; i++) {
+        if (options[i].value === "true") {
+          options[i].nextSibling.textContent = correctAnswer;
+        } else {
+          options[i].nextSibling.textContent = getRandomNumber(1, 81);
+        }
+      }
+
+      return correctAnswer;
+    }
+
+    function getRandomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function checkAnswer() {
+      const options = document.querySelectorAll("input[type=radio]");
+      let userAnswer;
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].checked) {
+          userAnswer = options[i].value;
+          options[i].checked = false;
+          break;
+        }
+      }
+
+      if (userAnswer === "true") {
+        score++;
+      }
+      document.getElementById("score").textContent = `Загальний рахунок: ${score} / ${totalQuestions}`;
+
+      if (userAnswer) {
+        const resultDiv = document.getElementById("result");
+        if (userAnswer === "true") {
+          resultDiv.textContent = "Правильно!";
+        } else {
+          resultDiv.textContent = "Неправильно!";
+        }
+        totalQuestions++;
+        currentQuestion = generateQuestion();
+      } else {
+        alert("Виберіть варіант відповіді перед перевіркою.");
+      }
+    }
+  </script>
+</body>
+</html>

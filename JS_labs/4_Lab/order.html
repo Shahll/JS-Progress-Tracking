@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      background-color: gray;
+    }
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 125px;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button value="T-Shirt">T-Shirt</button>
+    <button value="Shoes">Shoes</button>
+    <button value="Socks">Socks</button>
+    <button value="Thong">Thong</button>
+  </div>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>T-Shirt</th>
+      <th id="T-Shirt-Counter">0</th>
+    </tr>
+    <tr>
+      <th>Shoes</th>
+      <th id="Shoes-Counter">0</th>
+    </tr>
+    <tr>
+      <th>Socks</th>
+      <th id="Socks-Counter">0</th>
+    </tr>
+    <tr>
+      <th>Thong</th>
+      <th id="Thong-Counter">0</th>
+    </tr>
+  </table>
+  <script>
+    let counters = {};
+    const buttonContainer = document.getElementsByClassName("button-container")[0];
+    const buttons = buttonContainer.children;
+
+    for(const button of buttons){
+      const item = button.value;
+      counters[item] = 0;
+      button.addEventListener("click", function() {
+      counters[item]++;
+      const counter = document.getElementById(item + "-Counter");
+      counter.innerText  = counters[item];
+      })
+    }
+  
+    
+  </script>
+</body>
+</html>

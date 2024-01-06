@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form elements with active section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    section.active {
+      background-color: #e1f1ff;
+      border-color: #6fa1ff;
+    }
+
+    input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <section>
+      <label for="input1">1 Element</label>
+      <input type="text" id="input1">
+    </section>
+    
+    <section>
+      <label for="input2">2 Element</label>
+      <input type="text" id="input2">
+    </section>
+
+    <section>
+      <label for="input3">3 Element</label>
+      <input type="text" id="input3">
+    </section>
+  </form>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+      const input = section.querySelector("input");
+
+      input.addEventListener("focus", () => {
+        sections.forEach(s => s.classList.remove("active"));
+        section.classList.add('active');
+      })
+
+      input.addEventListener('blur', () => {
+        section.classList.remove('active');
+      });
+
+    });
+  </script>
+</body>
+</html>

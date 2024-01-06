@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createHeaders(number) {
+        let text = "";
+        for (let i = 1; i <= number; i++) {
+          text += `<h2>Header ${i}</h2>\n`;
+        }
+        return text;
+      }
+
+      const numberOfHeaders = 3;
+      const headersHTML = createHeaders(numberOfHeaders);
+
+      document.body.innerHTML = headersHTML;
+    </script>
+  </body>
+</html>

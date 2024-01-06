@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      text-align: center;
+    }
+    .image-container img {
+      transition: filter 0.3s;
+    }
+
+    .image-container img.gray {
+      filter: grayscale(100%);
+    }
+  </style>
+  <script>
+    function makeImageGray(image) {
+      if (image.classList.contains('gray')) {
+        image.classList.remove('gray');
+      } else {
+        image.classList.add('gray');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="image-container">
+    <img src="images/image1.png" onclick="makeImageGray(this)">
+    <img src="images/image2.png" onclick="makeImageGray(this)">
+    <div>
+    </div>
+    <img src="images/image3.png" onclick="makeImageGray(this)">
+    <img src="images/image4.png" onclick="makeImageGray(this)">
+  </div>
+</body>
+</html>

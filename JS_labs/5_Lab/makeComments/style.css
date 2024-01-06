@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+input {
+  height: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+button {
+  width: 100%;
+}
+
+.first-grid {
+  grid-column: 1;
+}
+
+
+table {
+  border-collapse: collapse; /* Merge cell borders */
+  width: 80%;
+  text-align: left; /* Align table content to the left */
+  margin-left: 70px;
+}
+
+table, th, td {
+  border: 1px solid black; /* Apply border to table, header cells, and data cells */
+  padding: 8px; /* Add padding to cells */
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Optional CSS style to alternate row colors for better readability */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

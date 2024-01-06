@@ -1,0 +1,30 @@
+#firstNum {
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+  }
+#operator {
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+    }
+#secondNum {
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+}
+#textToAnswer{
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+}
+#button{
+    text-align: center;
+    width: 300px;
+    height: 106px;
+    font-size: 30px;
+}

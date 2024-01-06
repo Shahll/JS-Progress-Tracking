@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <input type="checkbox" id="checkbox1" value="mountain@gmail.com">
+  <label for="checkbox1">mountain@gmail.com</label>
+  <div></div>
+  <input type="checkbox" id="checkbox2" value="cloud@gmail.com">
+  <label for="checkbox2">cloud@gmail.com</label>
+  <div></div>
+  <input type="checkbox" id="checkbox3" value="river@gmail.com">
+  <label for="checkbox3">river@gmail.com</label>
+  <div></div>
+  <input type="checkbox" id="checkbox4" value="rock@gmail.com">
+  <label for="checkbox4">rock@gmail.com</label>
+  <div></div>
+  <input type="checkbox" id="checkbox5" value="rain@gmail.com">
+  <label for="checkbox5">rain@gmail.com</label>
+  <div></div>
+  <input type="checkbox" id="checkbox6" value="sun@gmail.com">
+  <label for="checkbox6">sun@gmail.com</label>
+  <div id="textToChange"></div>
+
+  <script>
+    const checkboxes = [
+      document.getElementById("checkbox1"),
+      document.getElementById("checkbox2"),
+      document.getElementById("checkbox3"),
+      document.getElementById("checkbox4"),
+      document.getElementById("checkbox5"),
+      document.getElementById("checkbox6")
+    ];
+
+    checkboxes.forEach(checkbox => checkbox.addEventListener("change", showMail));
+
+    function showMail(){
+      let text = "";
+      checkboxes.forEach(checkbox => {
+        if(checkbox.checked) {
+          text += checkbox.value + "; ";
+        }
+      })
+      document.getElementById("textToChange").innerText = text.trim();
+    }
+  </script>
+</body>
+</html>

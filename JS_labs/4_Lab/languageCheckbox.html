@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function showUsed(){
+      const checkbox1 = document.getElementById("checkbox1");
+      const checkbox2 = document.getElementById("checkbox2");
+      const checkbox3 = document.getElementById("checkbox3");
+      let text = "";
+      if(checkbox1.checked)
+        text += checkbox1.value + " ";
+      if(checkbox2.checked)
+        text += checkbox2.value + " ";
+      if(checkbox3.checked)
+        text += checkbox3.value + " ";
+
+      document.getElementById("textToChange").innerText = text;
+    }
+  </script>
+</head>
+<body>
+  <input type="checkbox" id="checkbox1" value="ua">
+  <label for="checkbox1">Ukranian</label>
+  <input type="checkbox" id="checkbox2" value="de">
+  <label for="checkbox2">German</label>
+  <input type="checkbox" id="checkbox3" value="en">
+  <label for="checkbox3">English</label>
+  <button onclick="showUsed()">OK</button>
+  <p id="textToChange"></p>
+</body>
+</html>

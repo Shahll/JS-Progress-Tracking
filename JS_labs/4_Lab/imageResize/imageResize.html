@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+      position: relative;
+      flex: content;
+    }
+    button {
+      font-size: 40px;
+      width: 400px;
+      padding: 10px 20px 10px 20px;
+    }
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="resize()">resize</button>
+  <div> 
+  </div>
+  <img src="images/image1.png" id="image">
+  <script>
+    let count = 1 
+    // It is also possible to make a const variables of initial length and height, but I prefer this option
+
+    function resize(){
+      const image = document.getElementById("image");
+      count++;
+      if(count % 2 == 0) {
+        image.style.width = image.width * 2 + "px";
+        image.style.height = image.height * 2 + "px";
+      } else {
+        image.style.width = image.width / 2 + "px";
+        image.style.height = image.height / 2 + "px";
+      }
+    }
+  </script>
+</body>
+</html>
